@@ -26,7 +26,7 @@ The following packages are required for the [app.R](app.R) and [R/functions.R](R
 - shinyWidgets
 - shinyFeedback
 
-To install these packages, you can simply run: 'install.package("package name here")'
+To install these packages, you can simply run: `install.package("package name here")`
 
 ## Other Notes
 
