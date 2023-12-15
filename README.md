@@ -1,40 +1,34 @@
 # NBA Threes Since 1979
 
-## Author 
-
-- **Name:** Luke Marren
-- **LinkedIn** [Luke Marren on LinkedIn](https://www.linkedin.com/in/luke-marren-aa9912206/)
-
 ## Purpose
 
-This shiny app is designed to give NBA 'stat fanatics' a medium to interact with player 
+This Shiny app is designed to give NBA 'stat fanatics' a medium to interact with player 
 3-point data in ways typically unavailable on major NBA statistics channels 
-(e.g. ESPN, StatMuse, Basketball-Reference, etc.). Users can investigate 
-3-point statistics on over 3000 NBA players since the birth of the 3-point line.
-With customizable inputs for 3-point data by game, season, and over a player's 
-career, this app can be used to uncover otherwise hidden player 3-point data
-trends and insights.
+(e.g. ESPN, StatMuse, Basketball-Reference, etc.). Users can investigate otherwise hidden insights on over 3000 NBA players since the birth of the 3-point line.
 
-## Usage 
+## Installation
+
+### Prerequisites
+Make sure you have both [R and Rstudio](https://posit.co/download/rstudio-desktop/) downloaded before running any code.
+
+### Usage
+From there, depending on your local machine specs, you may need to run the command 
+```Sys.setenv("VROOM_CONNECTION_SIZE" = 500000)```
+to ensure the [data set](data/nba.csv) used in this app can load and display in your environment.
 
 The following packages are required for the [app.R](app.R) and [R/functions.R](R/functions.R) files to run:
-- tidyverse
-- dplyr
-- ggplot2
-- ggthemes
-- shiny
-- shinyWidgets
-- shinyFeedback
+- `tidyverse`
+- `dplyr`
+- `ggplot2`
+- `ggthemes`
+- `shiny`
+- `shinyWidgets`
+- `shinyFeedback`
 
 To install these packages, you can simply run:
+```install.package("package name here")```
 
-`install.package("package name here")`
-
-## Other Notes
-
-I am currently looking for a summer internship/job in the Chicagoland 
-area for data science/analytics/SWE positions. Feel free to contact me with job 
-referrals/inquiries via my LinkedIn or email.
+All analogous library calls are included in the [R/functions.R](R/functions.R) files.
 
 ## References 
 
