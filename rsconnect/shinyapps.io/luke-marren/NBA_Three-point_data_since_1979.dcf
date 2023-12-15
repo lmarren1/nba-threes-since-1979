@@ -1,0 +1,12 @@
+name: NBA_Three-point_data_since_1979
+title: NBA_Three-point_data_since_1979
+username: luke-marren
+account: luke-marren
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10758861
+bundleId: 8030638
+url: https://luke-marren.shinyapps.io/NBA_Three-point_data_since_1979/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
