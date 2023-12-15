@@ -3,7 +3,6 @@
 ## Author 
 
 - **Name:** Luke Marren
-- **Email** lukemarren173@gmail.com
 - **LinkedIn** [Luke Marren on LinkedIn](https://www.linkedin.com/in/luke-marren-aa9912206/)
 
 ## Purpose
@@ -19,15 +18,15 @@ trends and insights.
 ## Usage 
 
 The following packages are required for the [app.R](app.R) and [R/functions.R](R/functions.R) files to run:
-- dplyr
 - tidyverse
-- ggthemes
+- dplyr
 - ggplot2
+- ggthemes
 - shiny
 - shinyWidgets
 - shinyFeedback
 
-To install these packages, you can simply run: install.package("package name here")
+To install these packages, you can simply run: 'install.package("package name here")'
 
 ## Other Notes
 
