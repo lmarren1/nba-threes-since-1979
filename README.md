@@ -12,7 +12,9 @@ Make sure you have both [R and Rstudio](https://posit.co/download/rstudio-deskto
 
 ### Usage
 From there, depending on your local machine specs, you may need to run the command 
-```Sys.setenv("VROOM_CONNECTION_SIZE" = 500000)```
+```R
+Sys.setenv("VROOM_CONNECTION_SIZE" = 500000)
+```
 to ensure the [data set](data/nba.csv) used in this app can load and display in your environment.
 
 The following packages must be installed on your computer for the [app.R](app.R) and [R/functions.R](R/functions.R) files to run:
