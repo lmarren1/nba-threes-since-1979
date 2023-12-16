@@ -5,7 +5,7 @@
 This Shiny app is designed to give NBA 'stat fanatics' a medium to interact with player 
 3-point data in ways typically unavailable on major NBA statistics platforms. Users can uncover hidden insights on over 3000 NBA players since the birth of the 3-point line.
 
-## Installation
+## Setup
 
 ### Prerequisites
 Make sure you have both [R and RStudio](https://posit.co/download/rstudio-desktop/) downloaded before running any code.
