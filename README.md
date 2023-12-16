@@ -31,7 +31,7 @@ To install these packages, you can simply run:
 install.package("package name here")
 ```
 
-All analogous library calls are included in the [R/functions.R](R/functions.R) files.
+All analogous library calls are included in the [R/functions.R](R/functions.R) file.
 
 ## References 
 
