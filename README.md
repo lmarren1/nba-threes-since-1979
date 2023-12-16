@@ -3,8 +3,7 @@
 ## Purpose
 
 This Shiny app is designed to give NBA 'stat fanatics' a medium to interact with player 
-3-point data in ways typically unavailable on major NBA statistics channels 
-(e.g. ESPN, StatMuse, Basketball-Reference, etc.). Users can investigate otherwise hidden insights on over 3000 NBA players since the birth of the 3-point line.
+3-point data in ways typically unavailable on major NBA statistics platforms. Users can uncover hidden insights on over 3000 NBA players since the birth of the 3-point line.
 
 ## Installation
 
@@ -16,7 +15,7 @@ From there, depending on your local machine specs, you may need to run the comma
 ```Sys.setenv("VROOM_CONNECTION_SIZE" = 500000)```
 to ensure the [data set](data/nba.csv) used in this app can load and display in your environment.
 
-The following packages are required for the [app.R](app.R) and [R/functions.R](R/functions.R) files to run:
+The following packages must be installed on your computer for the [app.R](app.R) and [R/functions.R](R/functions.R) files to run:
 - `tidyverse`
 - `dplyr`
 - `ggplot2`
@@ -26,7 +25,9 @@ The following packages are required for the [app.R](app.R) and [R/functions.R](R
 - `shinyFeedback`
 
 To install these packages, you can simply run:
-```install.package("package name here")```
+```R
+install.package("package name here")
+```
 
 All analogous library calls are included in the [R/functions.R](R/functions.R) files.
 
