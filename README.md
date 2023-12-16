@@ -8,7 +8,7 @@ This Shiny app is designed to give NBA 'stat fanatics' a medium to interact with
 ## Installation
 
 ### Prerequisites
-Make sure you have both [R and Rstudio](https://posit.co/download/rstudio-desktop/) downloaded before running any code.
+Make sure you have both [R and RStudio](https://posit.co/download/rstudio-desktop/) downloaded before running any code.
 
 ### Usage
 From there, depending on your local machine specs, you may need to run the command 
