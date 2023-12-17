@@ -14,12 +14,11 @@ This Shiny app is designed to give NBA 'stat fanatics' a medium to interact with
 ### Prerequisites
 Make sure you have both [R and RStudio](https://posit.co/download/rstudio-desktop/) downloaded before running any code.
 
-### Usage
 From there, depending on your local machine specs, you may need to run the command:
 ```R
 Sys.setenv("VROOM_CONNECTION_SIZE" = 500000)
 ```
-to ensure the [data set](data/nba.csv) used in this app can load and display in your environment.
+to ensure the [data set](data/nba.csv) used in this app can load and display in your environment. If that is the case, the [setup.R](setup.R) file already has that code snippet set to run.
 
 The following packages must be installed on your computer for the [app.R](app.R) and [R/functions.R](R/functions.R) files to run:
 - `tidyverse`
@@ -36,6 +35,12 @@ install.package("package name here")
 ```
 
 All analogous library calls are included in the [R/functions.R](R/functions.R) file.
+
+### Usage
+
+To use the Shiny app, first run the `setup.R` script. This may take a while as there are over one million observations to load.
+
+Then move to `app.R` and the click the “Run App” button on the top right of the script.
 
 ## References 
 
