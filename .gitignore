@@ -1,5 +1,8 @@
+## .R files
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
-rsconnect/
+
+## shiny connectivity
+rsconnect/shinyapps.io/luke-marren/NBA_Three-point_data_since_1979.dcf
