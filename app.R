@@ -1,25 +1,28 @@
+##------------------------------------------------------------------------------
+## Shiny Front-End
+##------------------------------------------------------------------------------
+
 ui = navbarPage(
 
   title = "NBA",
 
+  ## all UI on left-side of NBA page
   tabPanel(
-
     title = "Input / Visualization",
-
     titlePanel(title = "NBA 3-Point Data Since 1979"),
 
     sidebarLayout(
 
       sidebarPanel(
 
+        ## enable input validation and loading signals
+        useShinyFeedback(),
+
         textAreaInput(inputId = "player_input",
                       label = "Player(s) Selected",
                       value = "All",
                       placeholder = "Enter Player Names\n- 'All' Returns All NBA Players",
                   width = "375px", height = "50px"),
-
-        useShinyFeedback(),
-
         textOutput(outputId = "player_validation"),
 
         dateRangeInput(inputId = "dateGame_input", label = "Date Range",
@@ -63,6 +66,7 @@ ui = navbarPage(
                     min = 0, max = max(dataset$season_pctFG3))
       ),
 
+      ## plot UI
       mainPanel(
 
           plotOutput(outputId = "plot", width = "1000px", height = "600px",
@@ -86,8 +90,13 @@ ui = navbarPage(
   )
 )
 
+##------------------------------------------------------------------------------
+## Shiny Back-End
+##------------------------------------------------------------------------------
+
 server = function(input, output, session) {
 
+  ## data sliders will pull from when player_input changes
   slider_updater = reactive({
     if (input$player_input == "All") {
       players = dataset$namePlayer
@@ -100,6 +109,7 @@ server = function(input, output, session) {
       filter(namePlayer == players)
   })
 
+  ## further filtering player-filtered data set based on user inputs
   filtered_slider_updater = reactive({
     slider_updater() |>
       filter(dateGame <= input$dateGame_input[[2]] & dateGame >= input$dateGame_input[[1]],
@@ -116,6 +126,7 @@ server = function(input, output, session) {
              season_fg3m, season_pctFG3, career_fg3a, career_fg3m)
   })
 
+  ## when player_input changes, change all other inputs accordingly
   observeEvent(
     eventExpr = input$player_input,
     handlerExpr = {
@@ -187,6 +198,7 @@ server = function(input, output, session) {
          player = input$player_input)},
   res = 96)
 
+  ## data table displayed under graph when user hovers mouse over data points
   output$hover_data <- renderDataTable({
     notification = showNotification("Loading Mouse Hover Data...",
                                     duration = NULL, closeButton = NULL,
@@ -196,6 +208,7 @@ server = function(input, output, session) {
     nearPoints(filtered_slider_updater(), input$plot_hover, maxpoints = 2)
   })
 
+  ## data table displayed in "Table" tab
   output$table = renderDataTable({
     notification = showNotification("Loading Data Table...",
                                     duration = NULL, closeButton = NULL,
@@ -205,5 +218,8 @@ server = function(input, output, session) {
   })
 }
 
-shinyApp(ui, server)
+##------------------------------------------------------------------------------
+## Shiny App Call
+##------------------------------------------------------------------------------
 
+shinyApp(ui, server) ## don't add code under this line, it'll result in an error
