@@ -15,7 +15,7 @@ This Shiny app is designed to give NBA 'stat fanatics' a medium to interact with
 Make sure you have both [R and RStudio](https://posit.co/download/rstudio-desktop/) downloaded before running any code.
 
 ### Usage
-From there, depending on your local machine specs, you may need to run the command 
+From there, depending on your local machine specs, you may need to run the command:
 ```R
 Sys.setenv("VROOM_CONNECTION_SIZE" = 500000)
 ```
