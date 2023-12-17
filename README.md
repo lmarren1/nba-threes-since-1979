@@ -7,7 +7,7 @@ This Shiny app is designed to give NBA 'stat fanatics' a medium to interact with
 
 ## Preview
 
-![alt text]("Screenshot 2023-12-16 211832.png")
+![alt text](211832.png)
 
 ## Setup
 
