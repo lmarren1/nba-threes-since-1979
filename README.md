@@ -7,7 +7,7 @@ This Shiny app is designed to give NBA 'stat fanatics' a medium to interact with
 
 ## Preview
 
-![](graph-preview.png)
+![](app-preview.mp4)
 
 ## Setup
 
