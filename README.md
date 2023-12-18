@@ -32,7 +32,7 @@ The following packages must be installed on your computer for the [app.R](app.R)
 - `shiny`
 - `shinyWidgets`
 - `shinyFeedback`
-- `rmarkdown`
+- `markdown`
 
 To install these packages, you can simply run:
 ```R
