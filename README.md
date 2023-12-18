@@ -7,6 +7,8 @@ This Shiny app is designed to give NBA 'stat fanatics' a medium to interact with
 
 ## Preview
 
+[Play around with it yourself here!](https://luke-marren.shinyapps.io/nba-app/)
+
 <p align="center">
 <img src="app-preview.gif" width="800">
 </p>
@@ -30,6 +32,7 @@ The following packages must be installed on your computer for the [app.R](app.R)
 - `shiny`
 - `shinyWidgets`
 - `shinyFeedback`
+- `rmarkdown`
 
 To install these packages, you can simply run:
 ```R

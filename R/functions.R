@@ -10,6 +10,7 @@ library(ggthemes)
 library(shiny)
 library(shinyWidgets)
 library(shinyFeedback)
+library(markdown)
 
 ## load data set
 dataset = read_csv(file = "data/nba.csv")
