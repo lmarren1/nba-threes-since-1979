@@ -33,7 +33,7 @@ The following packages must be installed on your computer for the [app.R](app.R)
 
 To install these packages, you can simply run:
 ```R
-install.package("package name here")
+install.packages("package name here")
 ```
 
 All analogous library calls are included in the [R/functions.R](R/functions.R) file.
