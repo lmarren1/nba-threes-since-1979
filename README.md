@@ -26,9 +26,6 @@ to ensure the [data set](data/nba.csv) used in this app can load and display in 
 
 The following packages must be installed on your computer for the [app.R](app.R) and [R/functions.R](R/functions.R) files to run:
 - `tidyverse`
-- `dplyr`
-- `ggplot2`
-- `ggthemes`
 - `shiny`
 - `shinyWidgets`
 - `shinyFeedback`

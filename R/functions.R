@@ -4,9 +4,6 @@
 
 ## load packages
 library(tidyverse)
-library(dplyr)
-library(ggplot2)
-library(ggthemes)
 library(shiny)
 library(shinyWidgets)
 library(shinyFeedback)
