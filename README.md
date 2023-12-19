@@ -31,9 +31,13 @@ The following packages must be installed on your computer for the [app.R](app.R)
 - `shinyFeedback`
 - `markdown`
 
-To install these packages, you can simply run:
+To install these packages, copy and run the code block underneath in the console:
 ```R
-install.packages("package name here")
+install.packages("tidyverse")
+install.packages("shiny")
+install.packages("shinyWidgets")
+install.packages("shinyFeedback")
+install.packages("markdown")
 ```
 
 All analogous library calls are included in the [R/functions.R](R/functions.R) file.
