@@ -53,5 +53,3 @@ Data Set Source:
 App Inspiration:
 
 - [NYT: Stephen Curry's 3-Point Record in Context: Off the Charts](https://www.nytimes.com/interactive/2016/04/16/upshot/stephen-curry-golden-state-warriors-3-pointers.html)
-
-View(gs_point_by_point)
