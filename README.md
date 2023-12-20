@@ -31,13 +31,9 @@ The following packages must be installed on your computer for the [app.R](app.R)
 - `shinyFeedback`
 - `markdown`
 
-To install these packages, copy and run the code block underneath in the console:
+To install these packages, copy and run this in the console:
 ```R
-install.packages("tidyverse")
-install.packages("shiny")
-install.packages("shinyWidgets")
-install.packages("shinyFeedback")
-install.packages("markdown")
+install.packages(c("tidyverse", "shiny", "shinyWidgets", "shinyFeedback", "markdown"))
 ```
 
 All analogous library calls are included in the [R/functions.R](R/functions.R) file.
@@ -58,3 +54,4 @@ App Inspiration:
 
 - [NYT: Stephen Curry's 3-Point Record in Context: Off the Charts](https://www.nytimes.com/interactive/2016/04/16/upshot/stephen-curry-golden-state-warriors-3-pointers.html)
 
+View(gs_point_by_point)
