@@ -29,7 +29,7 @@ From there, depending on your local machine specs, you may need to run the comma
 ```R
 Sys.setenv("VROOM_CONNECTION_SIZE" = 500000)
 ```
-to ensure the [data set](data/nba.csv) used in this app can load and display in your environment. If that is the case, the [setup.R](setup.R) file already has that code snippet set to run.
+to ensure the [dataset](data/nba.csv) used in this app can load and display in your environment. If that is the case, the [setup.R](setup.R) file already has that code snippet set to run.
 
 The following packages must be installed on your computer for the [app.R](app.R) and [R/functions.R](R/functions.R) files to run:
 - `tidyverse`
