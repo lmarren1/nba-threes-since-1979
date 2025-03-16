@@ -1,5 +1,11 @@
 # NBA Threes Since 1979
 
+![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
+![Stars](https://img.shields.io/github/stars/lmarren1/nba-threes-since-1979?style=flat-square)
+![Activity](https://img.shields.io/github/commit-activity/m/lmarren1/nba-threes-since-1979.svg?style=flat-square)
+![Last Commit](https://img.shields.io/github/last-commit/lmarren1/nba-threes-since-1979.svg?style=flat-square)
+![Version](https://img.shields.io/github/v/release/lmarren1/nba-threes-since-1979.svg?style=flat-square)
+
 ## Purpose
 
 This Shiny app is designed to give NBA 'stat fanatics' a medium to interact with player 
