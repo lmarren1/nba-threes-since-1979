@@ -52,7 +52,7 @@ Then move to `app.R` and the click the “Run App” button on the top right of 
 
 ## References 
 
-Data Set Source:
+Dataset Source:
 
 - [abresler / nbastatR](https://github.com/abresler/nbastatR)
 
