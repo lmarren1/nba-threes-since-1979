@@ -14,7 +14,7 @@ This Shiny app is designed to give NBA 'stat fanatics' a medium to interact with
 
 ## Preview
 
-[Play around with it yourself here!](https://luke-marren.shinyapps.io/nba-app/)
+[Try it here!](https://luke-marren.shinyapps.io/nba-app/)
 
 <p align="center">
 <img src="app-preview.gif" width="800">
