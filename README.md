@@ -1,10 +1,11 @@
 # NBA Threes Since 1979
 
+![Version](https://img.shields.io/github/v/release/lmarren1/nba-threes-since-1979.svg?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
 ![Stars](https://img.shields.io/github/stars/lmarren1/nba-threes-since-1979?style=flat-square)
 ![Activity](https://img.shields.io/github/commit-activity/m/lmarren1/nba-threes-since-1979.svg?style=flat-square)
 ![Last Commit](https://img.shields.io/github/last-commit/lmarren1/nba-threes-since-1979.svg?style=flat-square)
-![Version](https://img.shields.io/github/v/release/lmarren1/nba-threes-since-1979.svg?style=flat-square)
+![Issues](https://img.shields.io/github/issues/lmarren1/nba-threes-since-1979.svg?style=flat-square)
 
 ## Purpose
 
