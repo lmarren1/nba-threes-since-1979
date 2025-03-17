@@ -1,22 +1,16 @@
-##------------------------------------------------------------------------------
-## Data and Package Imports
-##------------------------------------------------------------------------------
+# Data load and package importation --------------------------------------------
 
-## load packages
 library(tidyverse)
 library(shiny)
 library(shinyWidgets)
 library(shinyFeedback)
 library(markdown)
 
-## load data set
-dataset = read_csv(file = "data/nba.csv")
+dataset <- read_csv(file = "data/nba.csv")
 
-##------------------------------------------------------------------------------
-## Plot Code
-##------------------------------------------------------------------------------
+# Plot function ----------------------------------------------------------------
 
-plot = function(min_dateGame, max_dateGame,
+plot <- function(min_dateGame, max_dateGame,
                 min_game_fg3a, max_game_fg3a,
                 min_game_fg3m, max_game_fg3m,
                 min_career_fg3a, max_career_fg3a,
@@ -27,17 +21,17 @@ plot = function(min_dateGame, max_dateGame,
                 player
 ) {
 
-  ## ensure player argument is comma-separated and handles "All"
+  # Ensure player argument is comma-separated and handles keyword "All"
   if (identical(player, "All")) {
-    players = dataset$namePlayer
+    players <- dataset$namePlayer
   } else if (length(str_split_1(player, ", ") > 1)) {
-    players = str_split_1(player, ", ")
+    players <- str_split_1(player, ", ")
   } else {
-    players = player
+    players <- player
   }
 
-  ## wrangle data set so it adheres to plot arguments (this is the main df)
-  df = dataset |>
+  # Wrangle dataset so it adheres to plot arguments (this is the main df)
+  df <- dataset |>
     filter(namePlayer == players,
            dateGame <= max_dateGame & dateGame >= min_dateGame,
            fg3a <= max_game_fg3a & fg3a >= min_game_fg3a,
@@ -48,24 +42,24 @@ plot = function(min_dateGame, max_dateGame,
            season_fg3m <= max_season_fg3m & season_fg3m >= min_season_fg3m,
            season_pctFG3 <= max_season_pctFG3 & season_pctFG3 >= min_season_pctFG3)
 
-  ## create df so each individual player gets their own color on the graph
-  unique_player_colors = df |>
+  # Create df so each individual player gets their own color on the graph
+  unique_player_colors <- df |>
     distinct(idPlayer, .keep_all = TRUE)
 
-  ## customize subtitle text so it reflects number of players displayed
+  # Customize subtitle text so it reflects number of players displayed
   if (length(players) <= 4) {
-    subtitle_text = str_flatten(players, ", ")
+    subtitle_text <- str_flatten(players, ", ")
   } else if (nrow(unique_player_colors) <= 4) {
-    subtitle_text = str_flatten(unique_player_colors$namePlayer, ", ")
+    subtitle_text <- str_flatten(unique_player_colors$namePlayer, ", ")
   } else {
-    subtitle_text = paste(nrow(unique_player_colors), "NBA Players")
+    subtitle_text <- paste(nrow(unique_player_colors), "NBA Players")
   }
 
   ggplot(data = df,
          mapping = aes(x = dateGame,
                        y = career_fg3m,
                        color = player_and_seasons)) +
-    ## switch from path plot to point-line plot if players displayed <= 100
+    # Switch from path plot to point-line plot if players displayed <= 100
     {if (nrow(df) <= 100) {
       geom_point()
     } else {
@@ -83,7 +77,7 @@ plot = function(min_dateGame, max_dateGame,
                      "Player Names and Career Duration",
                      "Player Name and Career Duration")
     ) +
-    ## if graph displays 10+ players, omit color legend
+    # If graph displays 10+ players, omit color legend
     guides(color = ifelse(nrow(unique_player_colors) > 10,
                           "none", guide_colorbar())) +
     scale_x_date(breaks = seq.Date(from = min_dateGame,

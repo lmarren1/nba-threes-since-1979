@@ -1,8 +1,6 @@
-##------------------------------------------------------------------------------
-## Shiny Front-End
-##------------------------------------------------------------------------------
+# Shiny Front-End --------------------------------------------------------------
 
-ui = navbarPage(
+ui <- navbarPage(
 
   title = "NBA",
 
@@ -66,7 +64,7 @@ ui = navbarPage(
                     min = 0, max = max(dataset$season_pctFG3))
       ),
 
-      ## plot UI
+      # Frontend for the plot
       mainPanel(
 
           plotOutput(outputId = "plot", width = "1000px", height = "600px",
@@ -90,27 +88,25 @@ ui = navbarPage(
   )
 )
 
-##------------------------------------------------------------------------------
-## Shiny Back-End
-##------------------------------------------------------------------------------
+# Shiny Back-End ---------------------------------------------------------------
 
-server = function(input, output, session) {
+server <- function(input, output, session) {
 
-  ## data sliders will pull from when player_input changes
-  slider_updater = reactive({
+  # Data sliders will pull from when player_input changes
+  slider_updater <- reactive({
     if (input$player_input == "All") {
-      players = dataset$namePlayer
+      players <- dataset$namePlayer
     } else if (length(str_split_1(input$player_input, ", ") > 1)) {
-      players = str_split_1(input$player_input, ", ")
+      players <- str_split_1(input$player_input, ", ")
     } else {
-      players = input$player_input
+      players <- input$player_input
     }
-    updated_dataset = dataset |>
+    updated_dataset <- dataset |>
       filter(namePlayer == players)
   })
 
-  ## further filtering player-filtered data set based on user inputs
-  filtered_slider_updater = reactive({
+  # Further filtering player-filtered data set based on user inputs
+  filtered_slider_updater <- reactive({
     slider_updater() |>
       filter(dateGame <= input$dateGame_input[[2]] & dateGame >= input$dateGame_input[[1]],
              fg3a <= input$game_fg3a_input[[2]] & fg3a >= input$game_fg3a_input[[1]],
@@ -126,7 +122,7 @@ server = function(input, output, session) {
              season_fg3m, season_pctFG3, career_fg3a, career_fg3m)
   })
 
-  ## when player_input changes, change all other inputs accordingly
+  # When player_input changes, change all other inputs accordingly
   observeEvent(
     eventExpr = input$player_input,
     handlerExpr = {
@@ -164,7 +160,7 @@ server = function(input, output, session) {
     }
   )
 
-  output$player_validation = renderText({
+  output$player_validation <- renderText({
     player_input = str_split_1(input$player_input, ", ")
     correct_player_input = all(player_input %in% dataset$namePlayer) | identical(player_input, "All")
     if (!correct_player_input) {
@@ -172,7 +168,7 @@ server = function(input, output, session) {
     }
   })
 
-  output$dateGame_validation = renderText({
+  output$dateGame_validation <- renderText({
     correct_date_input = input$dateGame_input[[1]] <= input$dateGame_input[[2]]
     if (!correct_date_input) {
       validate("Dates Must Not Overlap")
@@ -198,7 +194,7 @@ server = function(input, output, session) {
          player = input$player_input)},
   res = 96)
 
-  ## data table displayed under graph when user hovers mouse over data points
+  # Data table displayed under graph when user hovers mouse over data points
   output$hover_data <- renderDataTable({
     notification = showNotification("Loading Mouse Hover Data...",
                                     duration = NULL, closeButton = NULL,
@@ -208,8 +204,8 @@ server = function(input, output, session) {
     nearPoints(filtered_slider_updater(), input$plot_hover, maxpoints = 2)
   })
 
-  ## data table displayed in "Table" tab
-  output$table = renderDataTable({
+  # Data table displayed in "Table" tab
+  output$table <- renderDataTable({
     notification = showNotification("Loading Data Table...",
                                     duration = NULL, closeButton = NULL,
                                     type = "message")
@@ -218,8 +214,6 @@ server = function(input, output, session) {
   })
 }
 
-##------------------------------------------------------------------------------
-## Shiny App Call
-##------------------------------------------------------------------------------
+# Shiny App Call ---------------------------------------------------------------
 
-shinyApp(ui, server) ## don't add code under this line, it'll result in an error
+shinyApp(ui, server) # Don't add code under this line, it'll result in an error
